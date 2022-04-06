@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 class ApiTokenServiceProvider extends ServiceProvider
 {
-    protected $configName = 'laravel-api-token-middleware';
+    protected string $configName = 'laravel-api-token-middleware';
 
     /**
      * Bootstrap the application events.
@@ -17,13 +17,10 @@ class ApiTokenServiceProvider extends ServiceProvider
 
     /**
      * Publish config file.
-     *
-     * @param   void
-     * @return  void
      */
-    protected function publishConfig()
+    protected function publishConfig(): void
     {
         $configPath = __DIR__ . '/../config/' . $this->configName . '.php';
-        $this->publishes([$configPath => config_path($this->configName . '.php')], 'impersonate');
+        $this->publishes([$configPath => config_path($this->configName . '.php')], 'api-token-middleware');
     }
 }

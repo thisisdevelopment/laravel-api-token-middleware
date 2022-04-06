@@ -10,8 +10,7 @@ class VerifyInternalApiToken
     public function handle(Request $request, Closure $next): mixed
     {
         $headerToken = $request->header(config(
-            'laravel-api-token-middleware.token_header_key',
-            'X-API-Key'
+            'laravel-api-token-middleware.token_header_key'
         ));
 
         if ($headerToken !== null && $headerToken === config('laravel-api-token-middleware.token')) {
