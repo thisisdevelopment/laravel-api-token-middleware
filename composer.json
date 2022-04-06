@@ -1,0 +1,32 @@
+{
+    "name": "thisisdevelopment/laravel-api-token-middleware",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "package",
+        "plugin"
+    ],
+    "description": "Simple API token middleware for internal APIs",
+    "autoload": {
+        "psr-4": {
+            "ThisIsDevelopment\\LaravelApiTokenMiddleware\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sascha Mendel",
+            "email": "sascha@thisisdevelopment.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7",
+        "laravel/framework": "^9.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ThisIsDevelopment\\LaravelApiTokenMiddleware\\ApiTokenServiceProvider"
+            ]
+        }
+    }
+}
